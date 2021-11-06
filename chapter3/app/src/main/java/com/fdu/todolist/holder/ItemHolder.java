@@ -18,7 +18,6 @@ import com.fdu.todolist.model.ItemModel;
 public class ItemHolder extends RecyclerView.ViewHolder {
     private CheckBox cbox;
     private TextView tv_content, tv_date;
-//    private boolean item_delete;
 
     public ItemHolder(@NonNull View itemView) {
         super(itemView);
@@ -31,18 +30,15 @@ public class ItemHolder extends RecyclerView.ViewHolder {
         tv_content.setText(model.getContent());
         tv_date.setText(model.getDate());
         cbox.setChecked(model.isChecked());
-//        item_delete = model.isDeleted();
         updateDisplay();
     }
 
     public void updateDisplay() {
         if (cbox.isChecked()) {
-//            cbox.setClickable(false);
             tv_content.getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG);
             tv_content.setTextColor(Color.GRAY);
         }
         else {
-//            cbox.setClickable(true);
             tv_content.getPaint().setFlags(0);
             tv_content.setTextColor(Color.BLACK);
         }
